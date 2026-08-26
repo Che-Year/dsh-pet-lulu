@@ -1,0 +1,7 @@
+#!/usr/bin/env sh
+# dsh-pet — launch the dsh-pet-lulu capybara pet from this checkout.
+# Usage: bin/dsh-pet [pet options...]   (see `python -m dsh_pet --help`)
+set -e
+DIR="$(CDPATH= cd -- "$(dirname -- "$0")/.." && pwd)"
+cd "$DIR"
+exec "${DSH_PET_PYTHON:-python3}" -m dsh_pet "$@"

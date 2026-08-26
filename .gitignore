@@ -1,0 +1,27 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+build/
+dist/
+.pytest_cache/
+
+# Local runtime state
+.dsh_pet_config
+.dsh_pet_status.json
+status-test.json
+
+# Tests create their own temp dirs inside tests/
+tests/tmp-work/
+tests/.tmp/
+tests/workdir/
+
+# npm (the plugin declares commander in package.json; node_modules here is a
+# local copy used only to run `node plugin/test.js` without a registry)
+plugin/node_modules/
+plugin/package-lock.json
+
+# Reference repositories (downloaded during asset extraction; assets are
+# already extracted into dsh_pet/assets and documented in assets/SOURCES.md)
+reference/
+reference/*.zip

@@ -1,0 +1,26 @@
+# dsh pet profile — example Cordis composition
+
+# Place this content in `$DSH_HOME/profiles/pet/cordis.yml` (create the
+# directory if needed), or merge the row into `$DSH_HOME/cordis.patch.yml`
+# to mount the pet plugin on every profile.
+#
+# The plugin package itself is installed into the profile with:
+#
+#     dsh plugin --profile pet add <path-to-dsh-pet-lulu/plugin>
+#
+# Then launch the pet with:
+#
+#     dsh --profile pet pet                    # default: web pet (opens the browser)
+#     dsh --profile pet pet --mode terminal    # terminal TUI
+#     dsh --profile pet pet --mode tk          # Tk window mode
+#     dsh --profile pet pet --help             # all pet options
+#
+# For the literal `dsh pet` form, add a shell alias (see plugin/README.md).
+
+- id: dsh-pet
+  name: '@dsh-pet/plugin'
+  config:
+    # pythonBin: python        # python interpreter used to launch the pet
+    # packageDir: ''           # absolute path to the dsh-pet-lulu checkout,
+    #                          # or set the DSH_PET_HOME environment variable
+    # statusFile: ''           # JSON status file used by `petStatus` pushes

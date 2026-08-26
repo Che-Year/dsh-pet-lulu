@@ -1,0 +1,76 @@
+; dsh-pet configuration example
+; =============================
+; Copy this file to `.dsh_pet_config` in the directory you run the pet from,
+; or to `~/.dsh_pet_config`, then edit the values.  Command-line flags always
+; override the file.  All keys are optional — the pet runs fine with defaults.
+;
+; Format: INI-style, `#` and `;` start comments.
+
+[general]
+; Sprite pack to use: lulu | capybara
+;   lulu     - czy666chen/lulu (MIT)
+;   capybara - srwang0506/HatchPet-CapybaraLulu (Apache-2.0)
+pet_type = lulu
+
+; Log verbosity: debug | info | warning | error
+log_level = info
+
+[animation]
+; Animation frame rate in frames per second (default 10 FPS).
+fps = 10
+
+; Seconds between random actions (walk / jump / yawn / look) while idle.
+random_action_interval = 12.0
+
+; Probability (0..1) that an idle random-action tick actually triggers one.
+random_action_chance = 0.6
+
+[renderer]
+; Renderer backend: web | ansi | tk | auto
+;   web  - browser pet page (DEFAULT mode; opens http://127.0.0.1:8765)
+;   ansi - terminal truecolor half-block pet (TUI)
+;   tk   - Tkinter window (same as --gui)
+;   auto - resolves to web
+mode = web
+
+; Pet width in terminal characters for the ANSI renderer (8..200).
+ansi_width = 48
+
+; Background colour behind transparent pixels, e.g. 1e1e2e.
+; Leave empty to use the terminal's default background.
+bg_color =
+
+; Tk window pixel scale factor (1..8).
+tk_scale = 3
+
+; Local port for the web pet page (web mode).
+web_port = 8765
+
+; Open the browser automatically in web mode (true/false).
+open_browser = true
+
+[interaction]
+; Keys that trigger the pet reactions (single characters).
+feed_key = f
+pet_key = p
+sleep_key = s
+quit_key = q
+
+[dsh]
+; Where task status comes from:
+;   mock - built-in simulated dsh task (progress 0..100%, demo)
+;   file - read a JSON status file written by the dsh integration
+;   none - no status bubble
+status_source = mock
+
+; JSON status file path for status_source = file.
+; Written by the dsh pet plugin / integration; expected shape:
+;   {"task_name": "...", "phase": "...", "progress": 42.0,
+;    "gpu_temp": 61.0, "message": "..."}
+status_file = .dsh_pet_status.json
+
+; How often (seconds) the status source is polled.
+status_poll_interval = 1.0
+
+; Max width of the status bubble in characters.
+bubble_width = 40
