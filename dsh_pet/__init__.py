@@ -14,5 +14,5 @@ The pet ships with two sprite packs taken from open-source projects (see
 * ``capybara``  - srwang0506/HatchPet-CapybaraLulu (Apache-2.0)
 """
 
-__version__ = "0.1.0"
+__version__ = "0.1.1"
 __all__ = ["__version__"]
