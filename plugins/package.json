@@ -1,6 +1,6 @@
 {
   "name": "@dsh-pet/plugin",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "dsh pet integration: registers the `pet` subcommand and spawns the dsh-pet-lulu python pet as a subprocess; mode web (default) | terminal | tk; streams task status to the pet through a JSON status file.",
   "main": "index.js",
   "license": "MIT",
