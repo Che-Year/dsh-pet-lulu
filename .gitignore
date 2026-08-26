@@ -17,9 +17,9 @@ tests/.tmp/
 tests/workdir/
 
 # npm (the plugin declares commander in package.json; node_modules here is a
-# local copy used only to run `node plugin/test.js` without a registry)
-plugin/node_modules/
-plugin/package-lock.json
+# local copy used only to run `node plugins/test.js` without a registry)
+plugins/node_modules/
+plugins/package-lock.json
 
 # Reference repositories (downloaded during asset extraction; assets are
 # already extracted into dsh_pet/assets and documented in assets/SOURCES.md)
