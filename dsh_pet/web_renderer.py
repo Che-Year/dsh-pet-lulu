@@ -347,7 +347,7 @@ document.addEventListener("keydown", async (e) => {
 class _PetHandler(BaseHTTPRequestHandler):
     """Serves the pet page and its JSON/image API."""
 
-    server_version = "dsh-pet-lulu/1.0"
+    server_version = "dsh-pet-lulu/0.1.1"
 
     # injected by WebRenderer on the per-renderer subclass
     renderer: "WebRenderer" = None  # type: ignore
