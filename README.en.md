@@ -82,7 +82,7 @@ python -m dsh_pet            # or bin/dsh-pet (Windows: bin\dsh-pet.cmd)
 Install the dsh plugin (optional, see [dsh integration](#dsh-integration)):
 
 ```sh
-dsh plugin --profile pet add <path>/plugin
+dsh plugin --profile pet add <path>/plugins
 ```
 
 ## Choosing a mode
@@ -171,13 +171,13 @@ it never blocks the dsh main process.
 
 ```sh
 # 1. create the pet profile and install the plugin package (replace <path>)
-dsh plugin --profile pet add <path>/plugin
+dsh plugin --profile pet add <path>/pluginss
 
-# 2. put the content of plugin/pet.profile.yml into
+# 2. put the content of plugins/pet.profile.yml into
 #    $DSH_HOME/profiles/pet/cordis.patch.yml (append the insert row if it exists)
 ```
 
-Example `plugin/pet.profile.yml`:
+Example `plugins/pet.profile.yml`:
 
 ```yaml
 - insert:
@@ -280,7 +280,7 @@ All keys can be remapped in the `[interaction]` section.
 
 ```sh
 python -m unittest discover -s tests -v     # all unit tests (incl. web API tests)
-node plugin/test.js                         # cordis plugin tests
+node plugins/test.js                         # cordis plugin tests
 python scripts/render_preview.py            # generate docs/preview.gif
 python -m dsh_pet --renderer ansi --no-hint # try terminal mode manually
 python -m dsh_pet --no-browser              # try web mode manually
@@ -303,7 +303,7 @@ dsh_pet/
 │   ├── capybara/          # HatchPet-CapybaraLulu (Apache-2.0)
 │   └── SOURCES.md
 ├── bin/dsh-pet            # wrapper scripts (POSIX sh + Windows .cmd)
-├── plugin/                # cordis plugin (JS): registers the dsh pet subcommand (default web)
+├── plugins/               # cordis plugin (JS): registers the dsh pet subcommand (default web)
 ├── tests/                 # unittest: animation, state machine, keys, config, renderers, web
 ├── scripts/               # preview / demo scripts
 ├── .dsh_pet_config.example
