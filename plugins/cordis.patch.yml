@@ -1,0 +1,7 @@
+# dsh-pet bundle patch — declared by package.json `dsh.bundle`.
+# The single row mounts BOTH halves: the host half registers the `pet`
+# subcommand (spawns the python pet via `python -m dsh_pet`) and streams
+# task status through the `petStatus` service / JSON status file.
+- insert:
+    - id: dsh-pet
+      name: '@dsh-pet/plugin'
