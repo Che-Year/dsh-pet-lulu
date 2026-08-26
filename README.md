@@ -75,7 +75,7 @@ python -m dsh_pet            # 或 bin/dsh-pet（Windows: bin\dsh-pet.cmd）
 安装 dsh 插件（可选，见 [dsh 集成](#dsh-集成)）：
 
 ```sh
-dsh plugin --profile pet add <本仓库>/plugin
+dsh plugin --profile pet add <本仓库>/plugins
 ```
 
 ## 模式选择
@@ -159,13 +159,13 @@ python -m dsh_pet --gui --bg-color 1e1e2e
 
 ```sh
 # 1. 创建 pet profile 并安装插件包（把 <path> 换成插件目录）
-dsh plugin --profile pet add <path>/plugin
+dsh plugin --profile pet add <path>/plugins
 
-# 2. 将 plugin/pet.profile.yml 的内容放入
+# 2. 将 plugins/pet.profile.yml 的内容放入
 #    $DSH_HOME/profiles/pet/cordis.patch.yml（已存在则追加 insert 行）
 ```
 
-`plugin/pet.profile.yml` 内容示例：
+`plugins/pet.profile.yml` 内容示例：
 
 ```yaml
 - insert:
@@ -264,7 +264,7 @@ alias dsh-pet='dsh --profile pet pet'
 
 ```sh
 python -m unittest discover -s tests -v     # 全部单元测试（含 web 接口测试）
-node plugin/test.js                         # cordis 插件测试
+node plugins/test.js                         # cordis 插件测试
 python scripts/render_preview.py            # 生成 docs/preview.gif 预览
 python -m dsh_pet --renderer ansi --no-hint # 手动体验终端模式
 python -m dsh_pet --no-browser              # 手动体验 web 模式
@@ -287,7 +287,7 @@ dsh_pet/
 │   ├── capybara/          # HatchPet-CapybaraLulu（Apache-2.0）
 │   └── SOURCES.md
 ├── bin/dsh-pet            # 包装脚本（POSIX sh + Windows .cmd）
-├── plugin/                # cordis 插件（JS）：注册 dsh pet 子命令（默认 web 模式）
+├── plugins/               # cordis 插件（JS）：注册 dsh pet 子命令（默认 web 模式）
 ├── tests/                 # unittest：动画循环、状态机、按键、配置、渲染、web
 ├── scripts/               # 预览图/演示脚本
 ├── .dsh_pet_config.example
